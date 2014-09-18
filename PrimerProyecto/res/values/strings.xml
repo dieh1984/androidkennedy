@@ -1,8 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
+	<!-- TEXT PROPERTIES -->
     <string name="app_name">PrimerProyecto</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
-
+	<string name="displayTextView">display</string>
+	<string name="numberCero">0</string>
+	<string name="numberOne">1</string>
+	<string name="numberTwo">2</string>
+	<string name="numberThree">3</string>
+	<string name="numberFour">4</string>
+	<string name="numberFive">5</string>
+	<string name="numberSix">6</string>
+	<string name="numberSeven">7</string>
+	<string name="numberEight">8</string>
+	<string name="numberNine">9</string>							
+	<string name="point">.</string>
+	<string name="sum">+</string>
+	<string name="substraction">-</string>
+	<string name="multiplication">X</string>
+	<string name="division">/</string>
+	<string name="sqrt">Raíz2</string>
+	<string name="result">=</string>
+	<string name="clear">C</string>
+	
+	<!-- Onclick Properties -->
+    <string name="displayNumber">displayNumberAction</string>
+    <string name="clearAction">clearAction</string>
+    <string name="operationAction">operationAction</string>
+    <string name="resultAction">resultAction</string>
+    <string name="specialOperations">specialOperations</string>    
 </resources>
