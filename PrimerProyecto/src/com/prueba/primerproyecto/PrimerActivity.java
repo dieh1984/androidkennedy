@@ -1,7 +1,10 @@
 package com.prueba.primerproyecto;
 
+import java.text.DecimalFormat;
+
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -16,6 +19,8 @@ public class PrimerActivity extends ActionBarActivity {
 	private Double partialResult;
 	
 	private int operation;
+	
+	private boolean hasResult = false;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +48,10 @@ public class PrimerActivity extends ActionBarActivity {
 	}
 	
 	public void displayNumberAction(View view){
+		if(hasResult){
+			setDisplayText("");
+			hasResult = false;
+		}
 		TextView element = (TextView) view;
 		setDisplayText(String.valueOf(getDisplay().getText()).concat(String.valueOf(element.getText())));
 	}
@@ -58,6 +67,15 @@ public class PrimerActivity extends ActionBarActivity {
 		clear();
 	}
 	
+	public void operationRaizAction(View view){
+		Double nro = FormatUtils.parseDouble(getDisplay().getText());
+		if(nro >= 0){
+			Double result = Math.sqrt(nro);
+			DecimalFormat df = new DecimalFormat("#.####");
+			setDisplayText(String.valueOf(df.format(result)));
+		}
+	}
+	
 	public void resultAction(View view){
 		switch (operation) {
 			case R.string.sum: partialResult = previusNumber + FormatUtils.parseDouble(getDisplay().getText());  break;
@@ -66,6 +84,7 @@ public class PrimerActivity extends ActionBarActivity {
 			case R.string.division:partialResult = previusNumber / FormatUtils.parseDouble(getDisplay().getText()); break;
 		}
 		setDisplayText(String.valueOf(partialResult));
+		hasResult = true;
 	}
 	private void clear(){
 		getDisplay().setText(FormatUtils.EMPTY_STRING);

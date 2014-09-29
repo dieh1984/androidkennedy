@@ -28,6 +28,7 @@
     <string name="displayNumber">displayNumberAction</string>
     <string name="clearAction">clearAction</string>
     <string name="operationAction">operationAction</string>
+    <string name="operationRaizAction">operationRaizAction</string>
     <string name="resultAction">resultAction</string>
     <string name="specialOperations">specialOperations</string>    
 </resources>
