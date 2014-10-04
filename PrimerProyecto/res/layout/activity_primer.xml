@@ -23,7 +23,8 @@
 				    android:layout_width="254dp"
 				    android:layout_height="wrap_content"
 				    android:text="@string/numberCero"
-				    android:textSize="60sp" />
+				    android:textSize="60sp"
+				    android:gravity="right"/>
 
 	    </LinearLayout>
     
