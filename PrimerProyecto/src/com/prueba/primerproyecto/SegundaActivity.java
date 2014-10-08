@@ -11,7 +11,7 @@ import android.widget.TextView;
 
 import com.prueba.primerproyecto.utils.FormatUtils;
 
-public class PrimerActivity extends ActionBarActivity {
+public class SegundaActivity extends ActionBarActivity {
 
 	private Double previusNumber;
 	
@@ -65,7 +65,7 @@ public class PrimerActivity extends ActionBarActivity {
 		clearOperation();
 	}	
 	
-	public void operationAction(View view){
+	public void operationLandAction(View view){
 		operation = view.getId();
 		previusNumber = FormatUtils.parseDouble(getDisplay().getText());
 		doCalculate = true;

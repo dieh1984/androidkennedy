@@ -1,9 +1,9 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.prueba.primerproyecto.PrimerActivity" >
+    android:orientation="horizontal"
+    tools:context="com.prueba.primerproyecto.SegundaActivity" >
 
     <LinearLayout
         android:id="@+id/linearLayout1"
@@ -24,7 +24,7 @@
 
             <TextView
                 android:id="@string/displayTextView"
-                android:layout_width="314dp"
+                android:layout_width="530dp"
                 android:layout_height="wrap_content"
                 android:gravity="right"
                 android:text="@string/numberCero"
@@ -54,22 +54,23 @@
                     android:orientation="horizontal" >
 
                     <Button
-                        android:layout_width="77dp"
-                        android:layout_height="62dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:onClick="@string/displayNumber"
                         android:text="@string/numberSeven" />
 
                     <Button
-                        android:layout_width="77dp"
-                        android:layout_height="62dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:onClick="@string/displayNumber"
                         android:text="@string/numberEight" />
 
                     <Button
-                        android:layout_width="77dp"
-                        android:layout_height="62dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:onClick="@string/displayNumber"
                         android:text="@string/numberNine" />
+
                 </LinearLayout>
                 <!-- Fila 4,5,6 -->
 
@@ -79,22 +80,23 @@
                     android:orientation="horizontal" >
 
                     <Button
-                        android:layout_width="77dp"
-                        android:layout_height="62dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:onClick="@string/displayNumber"
                         android:text="@string/numberFour" />
 
                     <Button
-                        android:layout_width="77dp"
-                        android:layout_height="62dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:onClick="@string/displayNumber"
                         android:text="@string/numberFive" />
 
                     <Button
-                        android:layout_width="77dp"
-                        android:layout_height="62dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:onClick="@string/displayNumber"
                         android:text="@string/numberSix" />
+
                 </LinearLayout>
                 <!-- Fila 1,2,3 -->
 
@@ -104,22 +106,23 @@
                     android:orientation="horizontal" >
 
                     <Button
-                        android:layout_width="77dp"
-                        android:layout_height="62dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:onClick="@string/displayNumber"
                         android:text="@string/numberOne" />
 
                     <Button
-                        android:layout_width="77dp"
-                        android:layout_height="62dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:onClick="@string/displayNumber"
                         android:text="@string/numberTwo" />
 
                     <Button
-                        android:layout_width="77dp"
-                        android:layout_height="62dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:onClick="@string/displayNumber"
                         android:text="@string/numberThree" />
+
                 </LinearLayout>
                 <!-- Fila C,0,. -->
 
@@ -129,22 +132,23 @@
                     android:orientation="horizontal" >
 
                     <Button
-                        android:layout_width="77dp"
-                        android:layout_height="62dp"
-                        android:onClick="@string/clearAction"
-                        android:text="@string/clear" />
-
-                    <Button
-                        android:layout_width="77dp"
-                        android:layout_height="62dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:onClick="@string/displayNumber"
                         android:text="@string/numberCero" />
 
                     <Button
-                        android:layout_width="77dp"
-                        android:layout_height="62dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:onClick="@string/displayNumber"
                         android:text="@string/point" />
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="@string/resultAction"
+                        android:text="@string/result" />
+
                 </LinearLayout>
                 <!-- Fila = -->
 
@@ -152,13 +156,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal" >
-
-                    <Button
-                        android:layout_width="123dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="0.02"
-                        android:onClick="@string/resultAction"
-                        android:text="@string/result" />
                 </LinearLayout>
             </LinearLayout>
             <!-- Columna Operaciones -->
@@ -176,11 +173,32 @@
                     android:orientation="horizontal" >
 
                     <Button
-                        android:id="@string/sum"
-                        android:layout_width="77dp"
-                        android:layout_height="62dp"
-                        android:onClick="@string/operationAction"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="@string/operationAction" 
                         android:text="@string/sum" />
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="@string/operationAction"
+                        android:text="@string/sen" />
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/sqrt" />
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/divisionX" />
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="@string/clearAction"
+                        android:text="@string/clear" />
 
                 </LinearLayout>
                 <!-- Fila - -->
@@ -191,11 +209,26 @@
                     android:orientation="horizontal" >
 
                     <Button
-                        android:id="@string/substraction"
-                        android:layout_width="77dp"
-                        android:layout_height="62dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:onClick="@string/operationAction"
                         android:text="@string/substraction" />
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/cos" />
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/raiz3" />
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/cuadrado" />
+
                 </LinearLayout>
                 <!-- Fila X -->
 
@@ -205,11 +238,26 @@
                     android:orientation="horizontal" >
 
                     <Button
-                        android:id="@string/multiplication"
-                        android:layout_width="77dp"
-                        android:layout_height="62dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:onClick="@string/operationAction"
                         android:text="@string/multiplication" />
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/tg" />
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/raizX" />
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/expY" />
+
                 </LinearLayout>
                 <!-- Fila / -->
 
@@ -219,11 +267,26 @@
                     android:orientation="horizontal" >
 
                     <Button
-                        android:id="@+id/Button02"
-                        android:layout_width="77dp"
-                        android:layout_height="62dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:onClick="@string/operationAction"
                         android:text="@string/division" />
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/log" />
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/diezX" />
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/ln" />
+
                 </LinearLayout>
                 <!-- Fila ¬ -->
 
@@ -231,13 +294,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal" >
-
-                    <Button
-                        android:id="@string/sqrt"
-                        android:layout_width="77dp"
-                        android:layout_height="wrap_content"
-                        android:onClick="@string/operationRaizAction"
-                        android:text="@string/sqrt" />
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>

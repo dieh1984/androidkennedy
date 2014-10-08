@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 	<!-- TEXT PROPERTIES -->
-    <string name="app_name">PrimerProyecto</string>
+    <string name="app_name">Calculadora UK</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
 	<string name="displayTextView">display</string>
@@ -23,11 +23,24 @@
 	<string name="sqrt">Raíz2</string>
 	<string name="result">=</string>
 	<string name="clear">C</string>
+	<string name="clearNro">clr</string>
+	<string name="sen">sen</string>
+	<string name="cos">cos</string>
+	<string name="tg">tg</string>
+	<string name="divisionX">1/x</string>
+	<string name="raiz3">Raiz3</string>
+	<string name="raizX">RaizX</string>
+	<string name="log">log</string>
+	<string name="ln">ln</string>
+	<string name="diezX">(10)^x</string>
+	<string name="cuadrado">x^2</string>
+	<string name="expY">x^y</string>
 	
 	<!-- Onclick Properties -->
     <string name="displayNumber">displayNumberAction</string>
     <string name="clearAction">clearAction</string>
     <string name="operationAction">operationAction</string>
+    <string name="operationLandAction">operationLandAction</string>
     <string name="operationRaizAction">operationRaizAction</string>
     <string name="resultAction">resultAction</string>
     <string name="specialOperations">specialOperations</string>    
