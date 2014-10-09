@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="horizontal"
-    tools:context="com.prueba.primerproyecto.SegundaActivity" >
+    tools:context="com.prueba.primerproyecto.PrimerActivity" >
 
     <LinearLayout
         android:id="@+id/linearLayout1"
@@ -173,32 +173,32 @@
                     android:orientation="horizontal" >
 
                     <Button
+                        android:id="@string/sum"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:onClick="@string/operationAction" 
                         android:text="@string/sum" />
 
                     <Button
+                        android:id="@string/sen"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:onClick="@string/operationAction"
+                        android:onClick="@string/operationSenoAction"
                         android:text="@string/sen" />
 
                     <Button
+                        android:id="@string/sqrt"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:onClick="@string/operationRaizAction"
                         android:text="@string/sqrt" />
 
                     <Button
+                        android:id="@string/divisionX"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:onClick="@string/operationDivXAction"
                         android:text="@string/divisionX" />
-
-                    <Button
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:onClick="@string/clearAction"
-                        android:text="@string/clear" />
 
                 </LinearLayout>
                 <!-- Fila - -->
@@ -209,24 +209,31 @@
                     android:orientation="horizontal" >
 
                     <Button
+                        android:id="@string/substraction"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:onClick="@string/operationAction"
                         android:text="@string/substraction" />
 
                     <Button
+                        android:id="@string/cos"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:onClick="@string/operationCosenoAction"
                         android:text="@string/cos" />
 
                     <Button
+                        android:id="@string/raiz3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:onClick="@string/operationRaiz3Action"
                         android:text="@string/raiz3" />
 
                     <Button
+                        android:id="@string/cuadrado"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:onClick="@string/operationCuadradoAction"
                         android:text="@string/cuadrado" />
 
                 </LinearLayout>
@@ -238,25 +245,32 @@
                     android:orientation="horizontal" >
 
                     <Button
+                        android:id="@string/multiplication"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:onClick="@string/operationAction"
                         android:text="@string/multiplication" />
 
                     <Button
+                        android:id="@string/tg"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:onClick="@string/operationTangAction"
                         android:text="@string/tg" />
 
                     <Button
+                        android:id="@string/diezX"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/raizX" />
+                        android:onClick="@string/operationDiezXAction"
+                        android:text="@string/diezX" />
 
                     <Button
+                        android:id="@string/log10"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/expY" />
+                        android:onClick="@string/operationLogDiezAction"
+                        android:text="@string/log10" />
 
                 </LinearLayout>
                 <!-- Fila / -->
@@ -267,25 +281,25 @@
                     android:orientation="horizontal" >
 
                     <Button
+                        android:id="@string/division"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:onClick="@string/operationAction"
                         android:text="@string/division" />
 
                     <Button
+                        android:id="@string/clear"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:onClick="@string/clearAction"
+                        android:text="@string/clear" />
+
+                    <Button
+                        android:id="@string/log"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="@string/operationLogAction"
                         android:text="@string/log" />
-
-                    <Button
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/diezX" />
-
-                    <Button
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/ln" />
 
                 </LinearLayout>
                 <!-- Fila ¬ -->

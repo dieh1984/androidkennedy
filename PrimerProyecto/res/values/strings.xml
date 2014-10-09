@@ -31,7 +31,7 @@
 	<string name="raiz3">Raiz3</string>
 	<string name="raizX">RaizX</string>
 	<string name="log">log</string>
-	<string name="ln">ln</string>
+	<string name="log10">log10</string>
 	<string name="diezX">(10)^x</string>
 	<string name="cuadrado">x^2</string>
 	<string name="expY">x^y</string>
@@ -43,5 +43,15 @@
     <string name="operationLandAction">operationLandAction</string>
     <string name="operationRaizAction">operationRaizAction</string>
     <string name="resultAction">resultAction</string>
-    <string name="specialOperations">specialOperations</string>    
+    <string name="specialOperations">specialOperations</string>
+    <string name="operationSenoAction">operationSenoAction</string>
+    
+    <string name="operationDivXAction">operationDivXAction</string>
+    <string name="operationCosenoAction">operationCosenoAction</string>
+    <string name="operationRaiz3Action">operationRaiz3Action</string>
+    <string name="operationCuadradoAction">operationCuadradoAction</string>
+    <string name="operationTangAction">operationTangAction</string>
+    <string name="operationLogAction">operationLogAction</string>
+    <string name="operationDiezXAction">operationDiezXAction</string>
+    <string name="operationLogDiezAction">operationLogDiezAction</string>
 </resources>

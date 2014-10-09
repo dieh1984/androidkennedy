@@ -72,13 +72,92 @@ public class PrimerActivity extends ActionBarActivity {
 		clear();
 	}
 	
+	public void operationSenoAction(View view){
+		partialResult = Math.sin(FormatUtils.parseDouble(getDisplay().getText()));
+		DecimalFormat df = new DecimalFormat("#.#####");
+		setDisplayText(String.valueOf(df.format(partialResult)));
+		hasResult = true;
+		doCalculate = false;
+	}
+	
+	public void operationDivXAction(View view){
+		partialResult = 1 / FormatUtils.parseDouble(getDisplay().getText());
+		DecimalFormat df = new DecimalFormat("#.#####");
+		setDisplayText(String.valueOf(df.format(partialResult)));
+		hasResult = true;
+		doCalculate = false;
+	}
+	
+	public void operationCosenoAction(View view){
+		partialResult = Math.cos(FormatUtils.parseDouble(getDisplay().getText()));
+		DecimalFormat df = new DecimalFormat("#.#####");
+		setDisplayText(String.valueOf(df.format(partialResult)));
+		hasResult = true;
+		doCalculate = false;
+	}
+	
+	public void operationCuadradoAction(View view){
+		partialResult = FormatUtils.parseDouble(getDisplay().getText()) * FormatUtils.parseDouble(getDisplay().getText());
+		DecimalFormat df = new DecimalFormat("#.#####");
+		setDisplayText(String.valueOf(df.format(partialResult)));
+		hasResult = true;
+		doCalculate = false;
+	}
+	
+	public void operationTangAction(View view){
+		partialResult = Math.tan(FormatUtils.parseDouble(getDisplay().getText()));
+		DecimalFormat df = new DecimalFormat("#.#####");
+		setDisplayText(String.valueOf(df.format(partialResult)));
+		hasResult = true;
+		doCalculate = false;
+	}
+	
+	public void operationRaiz3Action(View view){
+		Double nro = FormatUtils.parseDouble(getDisplay().getText());
+		if(nro >= 0){
+			Double result = Math.cbrt(nro);
+			DecimalFormat df = new DecimalFormat("#.####");
+			setDisplayText(String.valueOf(df.format(result)));
+		}
+	}
+	
+	public void operationLogAction(View view){
+		partialResult = Math.log(FormatUtils.parseDouble(getDisplay().getText()));
+		DecimalFormat df = new DecimalFormat("#.#####");
+		setDisplayText(String.valueOf(df.format(partialResult)));
+		hasResult = true;
+		doCalculate = false;
+	}
+	
+	public void operationDiezXAction(View view){
+		for(int x=0;x<FormatUtils.parseDouble(getDisplay().getText());x++){
+			if(x==0){ 
+				partialResult = (double) (10 * 10);
+				x++;
+			}
+			partialResult *= 10;
+		}
+		DecimalFormat df = new DecimalFormat("#.#####");
+		setDisplayText(String.valueOf(df.format(partialResult)));
+		hasResult = true;
+		doCalculate = false;
+	}
+	
 	public void operationRaizAction(View view){
 		Double nro = FormatUtils.parseDouble(getDisplay().getText());
 		if(nro >= 0){
 			Double result = Math.sqrt(nro);
-			DecimalFormat df = new DecimalFormat("#.####");
+			DecimalFormat df = new DecimalFormat("#.#####");
 			setDisplayText(String.valueOf(df.format(result)));
 		}
+	}
+	
+	public void operationLogDiezAction(View view){
+		partialResult = Math.log10(FormatUtils.parseDouble(getDisplay().getText()));
+		DecimalFormat df = new DecimalFormat("#.#####");
+		setDisplayText(String.valueOf(df.format(partialResult)));
+		hasResult = true;
+		doCalculate = false;
 	}
 	
 	public void resultAction(View view){
@@ -87,12 +166,10 @@ public class PrimerActivity extends ActionBarActivity {
 				case R.string.sum: partialResult = previusNumber + FormatUtils.parseDouble(getDisplay().getText());  break;
 				case R.string.substraction: partialResult = previusNumber - FormatUtils.parseDouble(getDisplay().getText()); break;
 				case R.string.multiplication: partialResult = previusNumber * FormatUtils.parseDouble(getDisplay().getText()); break;
-				case R.string.division:partialResult = previusNumber / FormatUtils.parseDouble(getDisplay().getText()); break;
-				case R.string.sen:partialResult = Math.sin(FormatUtils.parseDouble(getDisplay().getText())); break;
-				case R.string.cos:partialResult = Math.cos(FormatUtils.parseDouble(getDisplay().getText())); break;
-				case R.string.tg:partialResult = Math.tan(FormatUtils.parseDouble(getDisplay().getText())); break;
+				case R.string.division: partialResult = previusNumber / FormatUtils.parseDouble(getDisplay().getText()); break;
 			}
-			setDisplayText(String.valueOf(partialResult));
+			DecimalFormat df = new DecimalFormat("#.#####");
+			setDisplayText(String.valueOf(df.format(partialResult)));
 			hasResult = true;
 			doCalculate = false;
 		}
