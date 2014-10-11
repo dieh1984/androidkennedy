@@ -20,19 +20,19 @@
 	<string name="substraction">-</string>
 	<string name="multiplication">X</string>
 	<string name="division">/</string>
-	<string name="sqrt">Raíz2</string>
+	<string name="sqrt">Raz2</string>
 	<string name="result">=</string>
 	<string name="clear">C</string>
 	<string name="clearNro">clr</string>
 	<string name="sen">sen</string>
 	<string name="cos">cos</string>
-	<string name="tg">tg</string>
+	<string name="tan">tan</string>
 	<string name="divisionX">1/x</string>
-	<string name="raiz3">Raiz3</string>
-	<string name="raizX">RaizX</string>
+	<string name="raiz3">Raz3</string>
+	<string name="raizX">RazX</string>
 	<string name="log">log</string>
-	<string name="log10">log10</string>
-	<string name="diezX">(10)^x</string>
+	<string name="log10">lg10</string>
+	<string name="diezX">10^x</string>
 	<string name="cuadrado">x^2</string>
 	<string name="expY">x^y</string>
 	

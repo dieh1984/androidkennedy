@@ -21,11 +21,13 @@ public class PrimerActivity extends ActionBarActivity {
 	
 	private boolean hasResult = false;
 	private boolean doCalculate = true; //indica si debe calcular o no
+	private DecimalFormat df;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_primer);
+		df = new DecimalFormat("#.######");
 	}
 
 	@Override
@@ -49,15 +51,24 @@ public class PrimerActivity extends ActionBarActivity {
 	
 	public void displayNumberAction(View view){
 		if(hasResult){
-			setDisplayText("");
+			setDisplayText("0");
 			hasResult = false;
 		}
 		TextView element = (TextView) view;
 		
 		//si ingresamos un digito y en el display dice solamente 0, reemplazamos 0 por el nro que ingresamos
-		if(getDisplay().getText().equals("0")) setDisplayText(String.valueOf(element.getText()));
-		else
-		setDisplayText(String.valueOf(getDisplay().getText()).concat(String.valueOf(element.getText())));
+		if(getDisplay().getText().equals("0")) 
+			if(String.valueOf(element.getText()).equals("."))
+				setDisplayText(String.valueOf(getDisplay().getText()).concat(String.valueOf(element.getText())));
+			else
+				setDisplayText(String.valueOf(element.getText()));
+		else{
+			if(String.valueOf(element.getText()).equals(".")){
+				if(getDisplay().getText().toString().indexOf(".") == -1)
+					setDisplayText(String.valueOf(getDisplay().getText()).concat(String.valueOf(element.getText())));
+			}
+			else setDisplayText(String.valueOf(getDisplay().getText()).concat(String.valueOf(element.getText())));
+		}
 	}
 	
 	public void clearAction(View view){
@@ -67,94 +78,94 @@ public class PrimerActivity extends ActionBarActivity {
 	
 	public void operationAction(View view){
 		operation = view.getId();
-		previusNumber = FormatUtils.parseDouble(getDisplay().getText());
+		previusNumber = FormatUtils.parseDouble(getDisplay().getText().toString().replace(',', '.'));
 		doCalculate = true;
 		clear();
 	}
 	
 	public void operationSenoAction(View view){
-		partialResult = Math.sin(FormatUtils.parseDouble(getDisplay().getText()));
-		DecimalFormat df = new DecimalFormat("#.#####");
+		partialResult = Math.sin(FormatUtils.parseDouble(getDisplay().getText().toString().replace(',', '.')));
+		
 		setDisplayText(String.valueOf(df.format(partialResult)));
 		hasResult = true;
 		doCalculate = false;
 	}
 	
 	public void operationDivXAction(View view){
-		partialResult = 1 / FormatUtils.parseDouble(getDisplay().getText());
-		DecimalFormat df = new DecimalFormat("#.#####");
+		partialResult = 1 / FormatUtils.parseDouble(getDisplay().getText().toString().replace(',', '.'));
+		
 		setDisplayText(String.valueOf(df.format(partialResult)));
 		hasResult = true;
 		doCalculate = false;
 	}
 	
 	public void operationCosenoAction(View view){
-		partialResult = Math.cos(FormatUtils.parseDouble(getDisplay().getText()));
-		DecimalFormat df = new DecimalFormat("#.#####");
+		partialResult = Math.cos(FormatUtils.parseDouble(getDisplay().getText().toString().replace(',', '.')));
+		
 		setDisplayText(String.valueOf(df.format(partialResult)));
 		hasResult = true;
 		doCalculate = false;
 	}
 	
 	public void operationCuadradoAction(View view){
-		partialResult = FormatUtils.parseDouble(getDisplay().getText()) * FormatUtils.parseDouble(getDisplay().getText());
-		DecimalFormat df = new DecimalFormat("#.#####");
+		partialResult = FormatUtils.parseDouble(getDisplay().getText().toString().replace(',', '.')) 
+							* FormatUtils.parseDouble(getDisplay().getText().toString().replace(',', '.'));
+		
 		setDisplayText(String.valueOf(df.format(partialResult)));
 		hasResult = true;
 		doCalculate = false;
 	}
 	
 	public void operationTangAction(View view){
-		partialResult = Math.tan(FormatUtils.parseDouble(getDisplay().getText()));
-		DecimalFormat df = new DecimalFormat("#.#####");
+		partialResult = Math.tan(FormatUtils.parseDouble(getDisplay().getText().toString().replace(',', '.')));
 		setDisplayText(String.valueOf(df.format(partialResult)));
 		hasResult = true;
 		doCalculate = false;
 	}
 	
 	public void operationRaiz3Action(View view){
-		Double nro = FormatUtils.parseDouble(getDisplay().getText());
+		Double nro = FormatUtils.parseDouble(getDisplay().getText().toString().replace(',', '.'));
 		if(nro >= 0){
 			Double result = Math.cbrt(nro);
-			DecimalFormat df = new DecimalFormat("#.####");
 			setDisplayText(String.valueOf(df.format(result)));
 		}
 	}
 	
 	public void operationLogAction(View view){
-		partialResult = Math.log(FormatUtils.parseDouble(getDisplay().getText()));
-		DecimalFormat df = new DecimalFormat("#.#####");
+		partialResult = Math.log(FormatUtils.parseDouble(getDisplay().getText().toString().replace(',', '.')));
 		setDisplayText(String.valueOf(df.format(partialResult)));
 		hasResult = true;
 		doCalculate = false;
 	}
 	
 	public void operationDiezXAction(View view){
-		for(int x=0;x<FormatUtils.parseDouble(getDisplay().getText());x++){
+		for(int x=0;x<FormatUtils.parseDouble(getDisplay().getText().toString().replace(',', '.'));x++){
 			if(x==0){ 
 				partialResult = (double) (10 * 10);
 				x++;
 			}
 			partialResult *= 10;
 		}
-		DecimalFormat df = new DecimalFormat("#.#####");
+		
 		setDisplayText(String.valueOf(df.format(partialResult)));
 		hasResult = true;
 		doCalculate = false;
 	}
 	
 	public void operationRaizAction(View view){
-		Double nro = FormatUtils.parseDouble(getDisplay().getText());
+		String outString = getDisplay().getText().toString().replace(',', '.');
+		Double nro = FormatUtils.parseDouble(outString);
 		if(nro >= 0){
 			Double result = Math.sqrt(nro);
-			DecimalFormat df = new DecimalFormat("#.#####");
+			
 			setDisplayText(String.valueOf(df.format(result)));
 		}
 	}
 	
 	public void operationLogDiezAction(View view){
-		partialResult = Math.log10(FormatUtils.parseDouble(getDisplay().getText()));
-		DecimalFormat df = new DecimalFormat("#.#####");
+		String outString = getDisplay().getText().toString().replace(',', '.');
+		partialResult = Math.log10(FormatUtils.parseDouble(outString));
+		
 		setDisplayText(String.valueOf(df.format(partialResult)));
 		hasResult = true;
 		doCalculate = false;
@@ -163,12 +174,12 @@ public class PrimerActivity extends ActionBarActivity {
 	public void resultAction(View view){
 		if(doCalculate){
 			switch (operation) {
-				case R.string.sum: partialResult = previusNumber + FormatUtils.parseDouble(getDisplay().getText());  break;
-				case R.string.substraction: partialResult = previusNumber - FormatUtils.parseDouble(getDisplay().getText()); break;
-				case R.string.multiplication: partialResult = previusNumber * FormatUtils.parseDouble(getDisplay().getText()); break;
-				case R.string.division: partialResult = previusNumber / FormatUtils.parseDouble(getDisplay().getText()); break;
+				case R.string.sum: partialResult = previusNumber + FormatUtils.parseDouble(getDisplay().getText().toString().replace(',', '.'));  break;
+				case R.string.substraction: partialResult = previusNumber - FormatUtils.parseDouble(getDisplay().getText().toString().replace(',', '.')); break;
+				case R.string.multiplication: partialResult = previusNumber * FormatUtils.parseDouble(getDisplay().getText().toString().replace(',', '.')); break;
+				case R.string.division: partialResult = previusNumber / FormatUtils.parseDouble(getDisplay().getText().toString().replace(',', '.')); break;
 			}
-			DecimalFormat df = new DecimalFormat("#.#####");
+			
 			setDisplayText(String.valueOf(df.format(partialResult)));
 			hasResult = true;
 			doCalculate = false;
@@ -190,7 +201,7 @@ public class PrimerActivity extends ActionBarActivity {
 	}
 	public void specialOperations(View view){
 		switch(view.getId()){
-		case R.string.sqrt:setDisplayText(String.valueOf(Math.sqrt(FormatUtils.parseDouble(getDisplay().getText()))));
+		case R.string.sqrt:setDisplayText(String.valueOf(Math.sqrt(FormatUtils.parseDouble(getDisplay().getText().toString().replace(',', '.')))));
 		}
 	}
 }

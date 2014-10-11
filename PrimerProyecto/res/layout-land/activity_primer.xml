@@ -252,11 +252,11 @@
                         android:text="@string/multiplication" />
 
                     <Button
-                        android:id="@string/tg"
+                        android:id="@string/tan"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:onClick="@string/operationTangAction"
-                        android:text="@string/tg" />
+                        android:text="@string/tan" /> 
 
                     <Button
                         android:id="@string/diezX"
@@ -300,6 +300,13 @@
                         android:layout_height="wrap_content"
                         android:onClick="@string/operationLogAction"
                         android:text="@string/log" />
+
+                    <Button
+                        android:id="@string/expY"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="@string/operationAction"
+                        android:text="@string/expY" />
 
                 </LinearLayout>
                 <!-- Fila ¬ -->

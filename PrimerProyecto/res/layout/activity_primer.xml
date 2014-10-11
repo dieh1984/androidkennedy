@@ -219,7 +219,7 @@
                     android:orientation="horizontal" >
 
                     <Button
-                        android:id="@+id/Button02"
+                        android:id="@string/division"
                         android:layout_width="77dp"
                         android:layout_height="62dp"
                         android:onClick="@string/operationAction"
