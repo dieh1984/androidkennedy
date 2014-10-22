@@ -1,6 +1,7 @@
 package com.prueba.primerproyecto;
 
 import java.text.DecimalFormat;
+import java.text.NumberFormat;
 
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
@@ -86,7 +87,13 @@ public class PrimerActivity extends ActionBarActivity {
 	public void operationSenoAction(View view){
 		partialResult = Math.sin(FormatUtils.parseDouble(getDisplay().getText().toString().replace(',', '.')));
 		
-		setDisplayText(String.valueOf(df.format(partialResult)));
+		if(partialResult > 1000000000){
+			NumberFormat formatter = new DecimalFormat("0.###E0");
+			setDisplayText(String.valueOf(formatter.format(partialResult)));
+		}
+		else{
+			setDisplayText(String.valueOf(df.format(partialResult)));
+		}
 		hasResult = true;
 		doCalculate = false;
 	}
@@ -94,7 +101,13 @@ public class PrimerActivity extends ActionBarActivity {
 	public void operationDivXAction(View view){
 		partialResult = 1 / FormatUtils.parseDouble(getDisplay().getText().toString().replace(',', '.'));
 		
-		setDisplayText(String.valueOf(df.format(partialResult)));
+		if(partialResult > 1000000000){
+			NumberFormat formatter = new DecimalFormat("0.###E0");
+			setDisplayText(String.valueOf(formatter.format(partialResult)));
+		}
+		else{
+			setDisplayText(String.valueOf(df.format(partialResult)));
+		}
 		hasResult = true;
 		doCalculate = false;
 	}
@@ -102,7 +115,13 @@ public class PrimerActivity extends ActionBarActivity {
 	public void operationCosenoAction(View view){
 		partialResult = Math.cos(FormatUtils.parseDouble(getDisplay().getText().toString().replace(',', '.')));
 		
-		setDisplayText(String.valueOf(df.format(partialResult)));
+		if(partialResult > 1000000000){
+			NumberFormat formatter = new DecimalFormat("0.###E0");
+			setDisplayText(String.valueOf(formatter.format(partialResult)));
+		}
+		else{
+			setDisplayText(String.valueOf(df.format(partialResult)));
+		}
 		hasResult = true;
 		doCalculate = false;
 	}
@@ -111,14 +130,26 @@ public class PrimerActivity extends ActionBarActivity {
 		partialResult = FormatUtils.parseDouble(getDisplay().getText().toString().replace(',', '.')) 
 							* FormatUtils.parseDouble(getDisplay().getText().toString().replace(',', '.'));
 		
-		setDisplayText(String.valueOf(df.format(partialResult)));
+		if(partialResult > 1000000000){
+			NumberFormat formatter = new DecimalFormat("0.###E0");
+			setDisplayText(String.valueOf(formatter.format(partialResult)));
+		}
+		else{
+			setDisplayText(String.valueOf(df.format(partialResult)));
+		}
 		hasResult = true;
 		doCalculate = false;
 	}
 	
 	public void operationTangAction(View view){
 		partialResult = Math.tan(FormatUtils.parseDouble(getDisplay().getText().toString().replace(',', '.')));
-		setDisplayText(String.valueOf(df.format(partialResult)));
+		if(partialResult > 1000000000){
+			NumberFormat formatter = new DecimalFormat("0.###E0");
+			setDisplayText(String.valueOf(formatter.format(partialResult)));
+		}
+		else{
+			setDisplayText(String.valueOf(df.format(partialResult)));
+		}
 		hasResult = true;
 		doCalculate = false;
 	}
@@ -127,13 +158,25 @@ public class PrimerActivity extends ActionBarActivity {
 		Double nro = FormatUtils.parseDouble(getDisplay().getText().toString().replace(',', '.'));
 		if(nro >= 0){
 			Double result = Math.cbrt(nro);
-			setDisplayText(String.valueOf(df.format(result)));
+			if(partialResult > 1000000000){
+				NumberFormat formatter = new DecimalFormat("0.###E0");
+				setDisplayText(String.valueOf(formatter.format(result)));
+			}
+			else{
+				setDisplayText(String.valueOf(df.format(result)));
+			}
 		}
 	}
 	
 	public void operationLogAction(View view){
 		partialResult = Math.log(FormatUtils.parseDouble(getDisplay().getText().toString().replace(',', '.')));
-		setDisplayText(String.valueOf(df.format(partialResult)));
+		if(partialResult > 1000000000){
+			NumberFormat formatter = new DecimalFormat("0.###E0");
+			setDisplayText(String.valueOf(formatter.format(partialResult)));
+		}
+		else{
+			setDisplayText(String.valueOf(df.format(partialResult)));
+		}
 		hasResult = true;
 		doCalculate = false;
 	}
@@ -147,7 +190,13 @@ public class PrimerActivity extends ActionBarActivity {
 			partialResult *= 10;
 		}
 		
-		setDisplayText(String.valueOf(df.format(partialResult)));
+		if(partialResult > 1000000000){
+			NumberFormat formatter = new DecimalFormat("0.###E0");
+			setDisplayText(String.valueOf(formatter.format(partialResult)));
+		}
+		else{
+			setDisplayText(String.valueOf(df.format(partialResult)));
+		}
 		hasResult = true;
 		doCalculate = false;
 	}
@@ -166,9 +215,25 @@ public class PrimerActivity extends ActionBarActivity {
 		String outString = getDisplay().getText().toString().replace(',', '.');
 		partialResult = Math.log10(FormatUtils.parseDouble(outString));
 		
-		setDisplayText(String.valueOf(df.format(partialResult)));
+		if(partialResult > 1000000000){
+			NumberFormat formatter = new DecimalFormat("0.###E0");
+			setDisplayText(String.valueOf(formatter.format(partialResult)));
+		}
+		else{
+			setDisplayText(String.valueOf(df.format(partialResult)));
+		}
 		hasResult = true;
 		doCalculate = false;
+	}
+	
+	public void operationBorrarAction(View view){
+		if(getDisplay().getText().length() == 1){
+			setDisplayText("0");
+		}
+		else{
+			String outString = getDisplay().getText().toString().substring(0, getDisplay().getText().length()-1);
+			setDisplayText(outString);
+		}
 	}
 	
 	public void resultAction(View view){
@@ -178,9 +243,16 @@ public class PrimerActivity extends ActionBarActivity {
 				case R.string.substraction: partialResult = previusNumber - FormatUtils.parseDouble(getDisplay().getText().toString().replace(',', '.')); break;
 				case R.string.multiplication: partialResult = previusNumber * FormatUtils.parseDouble(getDisplay().getText().toString().replace(',', '.')); break;
 				case R.string.division: partialResult = previusNumber / FormatUtils.parseDouble(getDisplay().getText().toString().replace(',', '.')); break;
+				case R.string.expY: partialResult = Math.pow(previusNumber,FormatUtils.parseDouble(getDisplay().getText().toString().replace(',', '.'))); break;
 			}
 			
-			setDisplayText(String.valueOf(df.format(partialResult)));
+			if(partialResult > 1000000000){
+				NumberFormat formatter = new DecimalFormat("0.###E0");
+				setDisplayText(String.valueOf(formatter.format(partialResult)));
+			}
+			else{
+				setDisplayText(String.valueOf(df.format(partialResult)));
+			}
 			hasResult = true;
 			doCalculate = false;
 		}

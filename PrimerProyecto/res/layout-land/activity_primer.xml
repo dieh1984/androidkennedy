@@ -200,6 +200,13 @@
                         android:onClick="@string/operationDivXAction"
                         android:text="@string/divisionX" />
 
+                    <Button
+                        android:id="@string/borrar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="@string/operationBorrarAction"
+                        android:text="@string/borrar" />
+
                 </LinearLayout>
                 <!-- Fila - -->
 

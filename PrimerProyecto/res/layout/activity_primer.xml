@@ -233,11 +233,11 @@
                     android:orientation="horizontal" >
 
                     <Button
-                        android:id="@string/sqrt"
+                        android:id="@string/borrar"
                         android:layout_width="77dp"
                         android:layout_height="wrap_content"
-                        android:onClick="@string/operationRaizAction"
-                        android:text="@string/sqrt" />
+                        android:onClick="@string/operationBorrarAction"
+                        android:text="@string/borrar" />
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>

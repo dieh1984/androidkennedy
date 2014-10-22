@@ -35,6 +35,7 @@
 	<string name="diezX">10^x</string>
 	<string name="cuadrado">x^2</string>
 	<string name="expY">x^y</string>
+	<string name="borrar">Borrar</string>
 	
 	<!-- Onclick Properties -->
     <string name="displayNumber">displayNumberAction</string>
@@ -54,4 +55,5 @@
     <string name="operationLogAction">operationLogAction</string>
     <string name="operationDiezXAction">operationDiezXAction</string>
     <string name="operationLogDiezAction">operationLogDiezAction</string>
+    <string name="operationBorrarAction">operationBorrarAction</string>
 </resources>
